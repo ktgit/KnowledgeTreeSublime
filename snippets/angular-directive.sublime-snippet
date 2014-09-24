@@ -1,0 +1,48 @@
+<snippet>
+  <content><![CDATA[
+angular.module('${1:ktmApp}').directive '${2:myDirective}', () ->
+  # Static variables/constants.
+  
+  # Directive controller
+  # Instantiated for each directive instance, but its methods
+  # are shared between instances (prototypical inheritance).
+  class Controller
+    constructor: (@scope) ->
+      throw new Error('No scope given.') if !@scope
+      # Instance initialization code
+    
+    # controllerMethod: () ->
+  
+  
+  # Directive definition
+  # ------------------------------------------------------------ 
+  restrict: 'EA'
+  templateUrl: "/src/module/directives/templates/${2}.html"
+  # scope: {}
+  
+  controllerAs: '${2}Controller'
+  controller: (\$scope) ->
+    return new Controller(\$scope)
+    
+  link: (\$scope, element, attrs, controller) ->
+    # Initialization
+    # ------------------------------------------------------------
+    $0
+
+    # Scope functions
+    # (Functions that manipulate the DOM.)
+    # ------------------------------------------------------------
+
+    # DOM Event handlers
+    # ------------------------------------------------------------
+
+    # Scope watchers
+    # (Use sparingly.)
+    # ------------------------------------------------------------
+]]></content>
+  <!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+  <tabTrigger>ktdir</tabTrigger>
+  <!-- Optional: Set a scope to limit where the snippet will trigger -->
+  <scope>source.coffee</scope>
+  <description>KT Angular Directive Template</description>
+</snippet>
