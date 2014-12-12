@@ -7,8 +7,8 @@ angular.module('${1:ktmApp}').directive '${2:myDirective}', () ->
   # Instantiated for each directive instance, but its methods
   # are shared between instances (prototypical inheritance).
   class Controller
-    constructor: (@scope) ->
-      # Instance initialization code
+    constructor: ($scope) ->
+      @scope = $scope
 
     # controllerMethod: () ->
 
@@ -20,8 +20,7 @@ angular.module('${1:ktmApp}').directive '${2:myDirective}', () ->
   # scope: {}
 
   controllerAs: '${2}Controller'
-  controller: (\$scope) ->
-    return new Controller(\$scope)
+  controller: Controller
 
   link: (\$scope, element, attrs, controller) ->
     # Initialization
